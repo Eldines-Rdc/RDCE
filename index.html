@@ -467,6 +467,177 @@
   }
   .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* JOHOR TETRIS */
+  .tetris-section {
+    background: var(--ink);
+    padding: 120px 80px;
+    position: relative;
+    overflow: hidden;
+    border-top: 0.5px solid rgba(201,169,110,0.1);
+  }
+  .tetris-section .section-label { color: var(--gold); }
+  .tetris-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+    margin-bottom: 72px;
+  }
+  .tetris-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--warm-white);
+    margin-bottom: 24px;
+  }
+  .tetris-heading em { font-style: italic; color: var(--gold); }
+  .tetris-body {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: rgba(201,169,110,0.55);
+  }
+  .tetris-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  .tetris-tags span {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.5);
+    border: 0.5px solid rgba(201,169,110,0.2);
+    padding: 5px 12px;
+  }
+  .tetris-game-wrap {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .tetris-board-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  canvas#t-board {
+    display: block;
+    border: 0.5px solid rgba(201,169,110,0.25);
+    background: #080400;
+  }
+  .tetris-hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.25);
+    text-align: center;
+  }
+  .tetris-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 120px;
+  }
+  .t-card {
+    background: rgba(201,169,110,0.04);
+    border: 0.5px solid rgba(201,169,110,0.15);
+    padding: 12px 14px;
+  }
+  .t-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.4);
+    margin-bottom: 4px;
+  }
+  .t-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1;
+  }
+  #t-next { display: block; margin-top: 6px; }
+  #t-start-btn {
+    background: transparent;
+    border: 0.5px solid rgba(201,169,110,0.3);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, color 0.3s;
+  }
+  #t-start-btn:hover { background: rgba(201,169,110,0.1); }
+  .t-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8,4,0,0.82);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .t-overlay h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+  }
+  .t-overlay p {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.45);
+  }
+  .t-overlay button {
+    margin-top: 8px;
+    background: transparent;
+    border: 0.5px solid rgba(201,169,110,0.4);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 10px 28px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .t-overlay button:hover { background: rgba(201,169,110,0.1); }
+  #t-mobile-row { display: none; gap: 8px; margin-top: 8px; }
+  .t-mb {
+    background: rgba(201,169,110,0.06);
+    border: 0.5px solid rgba(201,169,110,0.2);
+    color: var(--gold);
+    font-size: 16px;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  @media (max-width: 900px) {
+    .tetris-intro { grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
+    .tetris-section { padding: 80px 32px; }
+  }
+  @media (max-width: 560px) {
+    .tetris-game-wrap { flex-direction: column; align-items: center; }
+    .tetris-side { flex-direction: row; flex-wrap: wrap; width: 200px; }
+    .t-card { flex: 1; min-width: 70px; }
+    #t-mobile-row { display: flex; }
+  }
 </style>
 </head>
 <body>
@@ -483,6 +654,7 @@
     <a href="#process">Process</a>
     <a href="https://rdce.myportfolio.com/design" target="_blank">Design</a>
     <a href="https://rdce.myportfolio.com/others" target="_blank">Video</a>
+    <a href="#tetris">Johor Tetris</a>
     <a href="#contact" class="nav-cta">Get In Touch</a>
   </div>
 </nav>
@@ -701,6 +873,251 @@
     </div>
   </div>
 </section>
+
+<!-- JOHOR TETRIS -->
+<section class="tetris-section section" id="tetris">
+  <div class="section-label">For Fun</div>
+  <div class="tetris-intro fade-in">
+    <div>
+      <h2 class="tetris-heading">柔佛方块<br><em>Johor Tetris</em></h2>
+      <p class="tetris-body">A little something we built in the spirit of our hometown. Each block carries a piece of Johor — from the Sultan's Palace to the Straits of Malacca. Take a break, play a round.</p>
+      <div class="tetris-tags">
+        <span>新山 Johor Bahru</span>
+        <span>柔佛苏丹 Sultan Palace</span>
+        <span>热带雨林</span>
+        <span>马六甲海峡</span>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <div class="tetris-game-wrap">
+    <div class="tetris-board-col">
+      <div style="position:relative;">
+        <canvas id="t-board" width="200" height="400"></canvas>
+        <div class="t-overlay" id="t-overlay">
+          <h3>柔佛方块</h3>
+          <p>Negeri Johor Darul Ta'zim</p>
+          <button onclick="tStart()">开始游戏</button>
+        </div>
+      </div>
+      <div class="tetris-hint">← → 移动 &nbsp;·&nbsp; ↑ 旋转 &nbsp;·&nbsp; Space 直落</div>
+      <div id="t-mobile-row">
+        <button class="t-mb" onclick="tL()">←</button>
+        <button class="t-mb" onclick="tD()">↓</button>
+        <button class="t-mb" onclick="tRot()">↺</button>
+        <button class="t-mb" onclick="tR()">→</button>
+      </div>
+    </div>
+
+    <div class="tetris-side">
+      <div class="t-card">
+        <div class="t-label">得分</div>
+        <div class="t-val" id="t-score">0</div>
+      </div>
+      <div class="t-card">
+        <div class="t-label">等级</div>
+        <div class="t-val" id="t-level">1</div>
+      </div>
+      <div class="t-card">
+        <div class="t-label">消行</div>
+        <div class="t-val" id="t-lines">0</div>
+      </div>
+      <div class="t-card">
+        <div class="t-label">下一个</div>
+        <canvas id="t-next" width="100" height="80"></canvas>
+      </div>
+      <button id="t-start-btn" onclick="tStart()">重新开始</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const COLS=10,ROWS=20,B=20;
+  const cv=document.getElementById('t-board');
+  const cx=cv.getContext('2d');
+  const nc=document.getElementById('t-next');
+  const nx=nc.getContext('2d');
+
+  // Colors derived from Johor flag & cultural icons
+  const COLORS=[
+    {fill:'#8B6914',light:'#C9A96E',dark:'#4a3204'},   // Gold — Sultan Palace
+    {fill:'#8B1A1A',light:'#C0392B',dark:'#5a0f0f'},   // Red — Johor flag
+    {fill:'#1a5276',light:'#2e86c1',dark:'#0d2f44'},   // Blue — Straits of Malacca
+    {fill:'#1e6b2e',light:'#27ae60',dark:'#0f3a18'},   // Green — Rainforest
+    {fill:'#6c3483',light:'#9b59b6',dark:'#3d1a4d'},   // Purple — Royal
+    {fill:'#7d6608',light:'#b8860b',dark:'#3d3204'},   // Amber — Durian
+    {fill:'#2e4057',light:'#4a6fa5',dark:'#18202e'},   // Navy — Iskandar
+  ];
+
+  const SHAPES=[
+    [[1,1,1,1]],
+    [[1,1],[1,1]],
+    [[0,1,0],[1,1,1]],
+    [[1,0,0],[1,1,1]],
+    [[0,0,1],[1,1,1]],
+    [[1,1,0],[0,1,1]],
+    [[0,1,1],[1,1,0]],
+  ];
+
+  // Batik-inspired motif on each block
+  function drawMotif(ctx,px,py,sz,col){
+    ctx.save();
+    ctx.globalAlpha=0.28;
+    ctx.strokeStyle=col.light;
+    ctx.lineWidth=0.7;
+    const cx2=px+sz/2,cy2=py+sz/2;
+    ctx.beginPath();
+    ctx.moveTo(cx2,py+3);
+    ctx.lineTo(px+sz-3,cy2);
+    ctx.lineTo(cx2,py+sz-3);
+    ctx.lineTo(px+3,cy2);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawBlock(ctx,gx,gy,col,sz){
+    const px=gx*sz,py=gy*sz;
+    ctx.fillStyle=col.fill;
+    ctx.fillRect(px+1,py+1,sz-2,sz-2);
+    ctx.fillStyle='rgba(255,255,255,0.1)';
+    ctx.fillRect(px+1,py+1,sz-2,3);
+    ctx.fillStyle='rgba(255,255,255,0.05)';
+    ctx.fillRect(px+1,py+1,3,sz-2);
+    ctx.fillStyle=col.dark;
+    ctx.fillRect(px+1,py+sz-4,sz-2,3);
+    drawMotif(ctx,px,py,sz,col);
+  }
+
+  let board,piece,nextPiece,score,level,lines,dead,tmr;
+
+  function empty(){return Array.from({length:ROWS},()=>Array(COLS).fill(null));}
+  function rnd(){
+    const si=Math.floor(Math.random()*SHAPES.length);
+    const ci=Math.floor(Math.random()*COLORS.length);
+    const sh=SHAPES[si];
+    return{shape:sh,col:COLORS[ci],x:Math.floor(COLS/2)-Math.floor(sh[0].length/2),y:0};
+  }
+  function rot(sh){
+    const rows=sh.length,cols=sh[0].length;
+    const r=Array.from({length:cols},()=>Array(rows).fill(0));
+    for(let y=0;y<rows;y++) for(let x=0;x<cols;x++) r[x][rows-1-y]=sh[y][x];
+    return r;
+  }
+  function ok(p,b){
+    return p.shape.every((row,dy)=>row.every((v,dx)=>{
+      if(!v)return true;
+      const nx2=p.x+dx,ny=p.y+dy;
+      return nx2>=0&&nx2<COLS&&ny<ROWS&&(ny<0||!b[ny][nx2]);
+    }));
+  }
+  function place(p,b){
+    p.shape.forEach((row,dy)=>row.forEach((v,dx)=>{
+      if(v&&p.y+dy>=0) b[p.y+dy][p.x+dx]=p.col;
+    }));
+  }
+  function sweep(b){
+    const full=[];
+    for(let y=0;y<ROWS;y++) if(b[y].every(c=>c)) full.push(y);
+    full.forEach(i=>{b.splice(i,1);b.unshift(Array(COLS).fill(null));});
+    return full.length;
+  }
+
+  function paint(){
+    cx.fillStyle='#080400';
+    cx.fillRect(0,0,cv.width,cv.height);
+    for(let y=0;y<ROWS;y++) for(let x=0;x<COLS;x++){
+      cx.strokeStyle='rgba(201,169,110,0.06)';
+      cx.strokeRect(x*B,y*B,B,B);
+    }
+    for(let y=0;y<ROWS;y++) for(let x=0;x<COLS;x++) if(board[y][x]) drawBlock(cx,x,y,board[y][x],B);
+    if(piece){
+      let g={...piece,y:piece.y};
+      while(ok({...g,y:g.y+1},board)) g.y++;
+      piece.shape.forEach((row,dy)=>row.forEach((v,dx)=>{
+        if(v){cx.save();cx.globalAlpha=0.1;cx.fillStyle=piece.col.light;cx.fillRect((piece.x+dx)*B+1,(g.y+dy)*B+1,B-2,B-2);cx.restore();}
+      }));
+      piece.shape.forEach((row,dy)=>row.forEach((v,dx)=>{
+        if(v) drawBlock(cx,piece.x+dx,piece.y+dy,piece.col,B);
+      }));
+    }
+  }
+
+  function paintNext(){
+    nx.fillStyle='#080400';
+    nx.fillRect(0,0,100,80);
+    if(!nextPiece)return;
+    const sh=nextPiece.shape;
+    const ox=Math.floor((5-sh[0].length)/2);
+    const oy=Math.floor((4-sh.length)/2);
+    sh.forEach((row,dy)=>row.forEach((v,dx)=>{
+      if(v) drawBlock(nx,ox+dx,oy+dy,nextPiece.col,20);
+    }));
+  }
+
+  function ui(){
+    document.getElementById('t-score').textContent=score;
+    document.getElementById('t-level').textContent=level;
+    document.getElementById('t-lines').textContent=lines;
+  }
+
+  function tick(){
+    if(dead)return;
+    const mv={...piece,y:piece.y+1};
+    if(ok(mv,board)){piece=mv;}
+    else{
+      place(piece,board);
+      const cl=sweep(board);
+      if(cl){lines+=cl;score+=[0,100,300,500,800][cl]*level;level=Math.floor(lines/10)+1;}
+      piece=nextPiece;nextPiece=rnd();paintNext();
+      if(!ok(piece,board)){
+        dead=true;
+        const o=document.getElementById('t-overlay');
+        o.innerHTML='<h3>游戏结束</h3><p>Score '+score+' · Level '+level+'</p><button onclick="tStart()">再玩一次</button>';
+        o.style.display='flex';
+        return;
+      }
+    }
+    ui();paint();
+    clearTimeout(tmr);
+    tmr=setTimeout(tick,Math.max(80,550-(level-1)*45));
+  }
+
+  window.tStart=function(){
+    board=empty();score=0;level=1;lines=0;dead=false;
+    piece=rnd();nextPiece=rnd();
+    document.getElementById('t-overlay').style.display='none';
+    clearTimeout(tmr);ui();paintNext();tick();
+  };
+  window.tL=function(){if(!dead&&ok({...piece,x:piece.x-1},board)){piece.x--;paint();}};
+  window.tR=function(){if(!dead&&ok({...piece,x:piece.x+1},board)){piece.x++;paint();}};
+  window.tD=function(){if(!dead){const m={...piece,y:piece.y+1};if(ok(m,board)){piece=m;score++;ui();paint();}}};
+  window.tRot=function(){
+    if(!dead){
+      const r=rot(piece.shape);const rp={...piece,shape:r};
+      for(let k of[0,-1,1,-2,2]){const t={...rp,x:rp.x+k};if(ok(t,board)){piece=t;paint();return;}}
+    }
+  };
+
+  document.addEventListener('keydown',e=>{
+    // Only hijack keys when user is in tetris viewport area to avoid interfering with scroll
+    if(!['ArrowLeft','ArrowRight','ArrowDown','ArrowUp',' '].includes(e.key))return;
+    const rect=cv.getBoundingClientRect();
+    const inView=rect.top<window.innerHeight&&rect.bottom>0;
+    if(!inView)return;
+    e.preventDefault();
+    if(e.key==='ArrowLeft')tL();
+    else if(e.key==='ArrowRight')tR();
+    else if(e.key==='ArrowDown')tD();
+    else if(e.key==='ArrowUp')tRot();
+    else if(e.key===' '){if(dead)return;while(ok({...piece,y:piece.y+1},board)){piece.y++;score++;}ui();paint();}
+  });
+
+  paint();
+})();
+</script>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
